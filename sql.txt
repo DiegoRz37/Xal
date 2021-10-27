@@ -1,0 +1,16 @@
+¿Cuál es el nombre aeropuerto que ha tenido mayor movimiento durante el año?
+ id = SELECT TOP 1 id_aeropuertos FROM vuelos GROUP By id_aeropuerto ORDER By Count(id_aeropuertos) DESC
+SELECT nombre_aeropuerto FROM aeropuerto WHERE id_aeropuerto = id
+
+
+
+¿Cuál es el nombre aerolínea que ha realizado mayor número de vuelos durante el año?
+id = SELECT TOP 1 id_aerolineas FROM vuelos GROUP By id_aerolineas ORDER By Count(id_aerolineas) DESC
+SELECT nombre_aerolinea FROM aerolineas WHERE id_aerolineas = id
+
+
+¿En qué día se han tenido mayor número de vuelos?
+SELECT TOP 1 dia FROM vuelos GROUP By dia ORDER By Count(dia) DESC
+
+¿Cuáles son las aerolíneas que tienen mas de 2 vuelos por día?
+SELECT id_aerolineas FROM vuelos GROUP By id_aerolineas HAVING Count(id_aerolineas) > 2
